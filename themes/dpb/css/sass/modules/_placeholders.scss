@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+%googlegont {
+  font-family: 'Raleway', sans-serif;
+}
+/*
+%h-line {
+  content: "";
+  display: block;
+  background-color: $dark-blue;
+  width: 20px;
+  height: 4px;
+  margin: 16px auto;
+  vertical-align: middle;
+
+  @include mediaquery('max', $tablet) {
+    width: 16px;
+    height: 4px;
+    margin: 10px auto;
+  }
+}
+
+*/

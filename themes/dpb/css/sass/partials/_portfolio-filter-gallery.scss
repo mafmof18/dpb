@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+.portfolio-wraper {
+
+  .col-lg-12 {
+    float: left;
+  }
+
+  #all-simplefilter {
+    display: block;
+  }
+
+  .simplefilter li {
+    display: block;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  .simplefilter_5 {
+
+    li {
+      background-color: transparent!important;
+      color: #000!important;
+
+      &.active {
+        background-color: transparent!important;
+      }
+    }
+  }
+}

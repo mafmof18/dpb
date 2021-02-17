@@ -1,14 +1,17 @@
-## Description
+## 説明
 
-dailypracticebooks
+Daily Practice Books 公式サイト
 
-## URL
+## サイトURL
 
+https://dailypracticebooks.com/
 
-## 環境構築方法
+## サーバパネル
 
-特筆なし
+https://www.xserver.ne.jp/login_info.php
 
-Email : mmmmmnm@me.com
-Instagram : @dailypracticebooks
-Twitter : @dailypracticebooks
+会員ID: chk95043
+
+## リポジトリ
+
+https://github.com/mafmof18/dpb

@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+@mixin mediaquery($name, $query: false, $base: 'width') {
+  @if $query {
+    @if $base == 'width' {
+      @if $name == "max" {
+        @media (max-width: $query) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+// z-index
+@function z($name) {
+  @return index($z-map, $name);
+}
+
+// text center posipon
+@mixin font-size-position($size, $position: 1) {
+  font-size: $size + rem;
+  letter-spacing: $position + rem;
+  text-indent: $position + rem;
+}
+
+@mixin hide-text {
+  text-indent: -9999px;
+  text-align: left;
+}
+
+@mixin bg-responsive($file, $base: width, $scale: 100%, $maps: false) {
+  $width: image-width($file);
+  $height: image-height($file);
+  background-image: image-url($file);
+
+  @if $base == width {
+    padding-bottom: $height / $width * $scale;
+    width: $scale;
+    height: 0;
+  } @else if $base == height {
+    padding-left: $width / $height * $scale;
+    height: $scale;
+    width: 0;
+  }
+
+  @if $maps {
+    @each $property, $value in ($maps) {
+      #{$property}: $value;
+    }
+  } @else {
+    background-position: 0 0;
+    background-size: cover;
+  }
+}
+
+/*
+@mixin bg($file, $scale: 2, $bgSize: cover, $rep: no-repeat, $pos: 0 0) {
+  $width: image-width($file);
+  $height: image-height($file);
+  width: $width / $scale;
+  height: $height / $scale;
+  background: {
+    image: image-url($file);
+    repeat: $rep;
+    position: $pos;
+    size: $bgSize;
+ }
+}
+
+@mixin bg-fixed($image, $mask: false) {
+  background: {
+    image: image-url($image);
+    repeat: no-repeat;
+    position: center top;
+    size: cover;
+    attachment: fixed;
+  }
+
+  @if $mask {
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: {
+        image: image-url('pc/home/mask.png');
+        repeat: repeat;
+      }
+    }
+  }
+}
+
+@mixin placeholder-color($color) {
+  &:placeholder-shown {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color:$color;
+  }
+  &:-moz-placeholder {
+    color:$color;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color:$color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color:$color;
+  }
+}
+
+@mixin icon-font($content: '', $size: 12px, $type: Free) {
+  content: '#{$content}';
+  font-family: 'Font Awesome 5 #{$type}';
+  font-size: #{$size};
+}
+
+@mixin responsive-font-size {
+  font-size: 15px;
+
+  @include mediaquery('max', $tablet) {
+    font-size: 14px;
+  }
+
+  @include mediaquery('max', $sp) {
+    font-size: 13px;
+  }
+}
+*/

@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+// color
+$black: #000;
+
+// breakpoint
+$sp: 414px; // iphone6〜
+$middle: 600px;
+$tablet: 768px; // ipad
+$content: 980px; // site width
+$sp-content: 90%; // site sp width
+
+// z-index
+$z-map: (
+  eyecatch,
+  catchcopy,
+  header
+);

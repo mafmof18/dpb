@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "svgfont";
+  src: url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.eot');
+  src: url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.eot?#iefix') format('eot'),
+    url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.woff') format('woff'),
+    url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.ttf') format('truetype'),
+    url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.svg#svgfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.svgfont {
+  display: inline-block;
+  font-family: "svgfont";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.svgfont-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.svgfont-2x { font-size: 2em; }
+.svgfont-3x { font-size: 3em; }
+.svgfont-4x { font-size: 4em; }
+.svgfont-5x { font-size: 5em; }
+.svgfont-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+.svgfont-:before { content: "\EA01" }

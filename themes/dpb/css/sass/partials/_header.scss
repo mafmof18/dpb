@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+header {
+
+  h1 {
+    @extend %googlegont;
+    font-size: 7rem;
+    line-height: 1;
+    letter-spacing: 0.3rem;
+  }
+}
+
+nav {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.1rem;
+
+  &.gallery-category li:before{
+    content: "#";
+    margin-right: 1%;
+  }
+}

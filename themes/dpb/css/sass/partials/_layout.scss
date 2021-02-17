@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+body {
+  display: grid;
+  grid-template-rows: 150px 150px 1fr 1fr 50px;
+  grid-template-columns: 250px 1fr;
+  grid-template-areas:
+  "header header"
+  "gnav   content"
+  "cnav   content"
+  "sns   content"
+  "footer footer";
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background: #f88;
+}
+
+nav.global-navigation {
+  grid-area: gnav;
+  background: #8f8;
+
+}
+
+nav.gallery-category {
+  grid-area: cnav;
+  background: #88f;
+}
+
+.sns {
+  grid-area: sns;
+  background: #8f8f8f;
+}
+
+main {
+  grid-area: content;
+  background: #88f000;
+}
+
+footer {
+  grid-area: footer;
+  background: #00088f;
+}
