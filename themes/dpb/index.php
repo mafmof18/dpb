@@ -4,20 +4,29 @@
   if(isset($_GET['category'])) {
     $category = $_GET['category'];
   } else {
-    $category = all;
+    $category = 'all';
   }
-?>
 
-<?php
-$terms = get_terms('category_media');
+  $wp_path = '';
+  // ローカルならパスを渡す
+  if (strpos($_SERVER['HTTP_HOST'], '192.168') !== false || strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
+    $wp_path = ABSPATH;
+  } else {
+    $wp_path = '';
+  }
+
+  $nonce = wp_create_nonce("ajax-nonce");
+
+  $categories = get_categories();
+
   echo '<nav class="gallery-category">';
   echo '<ul>';
-  foreach( $terms as $term ) {
-    echo '<li>'.$term->name.'</li>';
+  foreach( $categories as $obj ) {
+    echo '<li class="'.$obj->slug.'" data-category="'.$obj->slug.'">'.$obj->name.'</li>';
   }
   echo '</ul>';
   echo '</nav>';
-//  echo $category;
+  //  echo $category;
 ?>
 
 <div class="sns">
@@ -29,24 +38,24 @@ $terms = get_terms('category_media');
 
 <main class="content">
 
-  <?php echo do_shortcode('[gallery category=' . $category . ']'); ?>
+  <div id="comic-area" class="comic-inner" data-category="<?php echo $category; ?>" data-path="<?php echo $wp_path;  ?>" data-nonce="<?php echo $nonce; ?>" >
 
-  <?php
-    $wp_alt = get_post_meta( 13 , '_wp_attachment_image_alt', true );
-    echo $wp_alt;
-  ?>
+   <div id="all" class="all comic-list" data-paged="1" data-loaded="false">
+   </div>
 
-<?php
-$myposts = get_posts('post_type=attachment&post_mime_type=image');
-if (have_posts()):
- foreach($myposts as $post) : ?>
-        <img src="<?php echo wp_get_attachment_url($post->ID); ?>">
- <?php endforeach; ?>
-<?php endif; ?>
+    <?php
+      foreach( $categories as $category ) {
+    ?>
+        <div id="<?php echo $category->slug ?>" class="<?php echo $category->slug ?> comic-list" data-paged="1" data-loaded="false">
+          <?php //get_comic('all', 1, PAGE_COMIC_COUNT); ?>
+        </div>
+    <?php
+      }
+    ?>
+  </div>
 
-<?php
+  <div class="loader">Loading...</div>
 
-?>
 </main>
 
 <?php get_footer(); ?>
