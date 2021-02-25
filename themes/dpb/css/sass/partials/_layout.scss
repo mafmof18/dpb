@@ -15,31 +15,31 @@ body {
 
 header {
   grid-area: header;
-  background: #f88;
+//  background: #f88;
 }
 
 nav.global-navigation {
   grid-area: gnav;
-  background: #8f8;
+//  background: #8f8;
 
 }
 
 nav.gallery-category {
   grid-area: cnav;
-  background: #88f;
+//  background: #88f;
 }
 
 .sns {
   grid-area: sns;
-  background: #8f8f8f;
+//  background: #8f8f8f;
 }
 
 main {
   grid-area: content;
-  background: #88f000;
+//  background: #88f000;
 }
 
 footer {
   grid-area: footer;
-  background: #00088f;
+//  background: #00088f;
 }

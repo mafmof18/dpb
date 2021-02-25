@@ -6,7 +6,7 @@
   // なければテーマからの相対パスでwp-configをインクルードする
   } else {
     // 本番とテストの絶対パスをベタ書きで記載
-    $wp_path = '/dailypracticebooks.com/public_html/wp-load.php';
+    $wp_path = '../../../../wp-load.php';
   }
 
   // wp-configがあれば
