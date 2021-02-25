@@ -27,6 +27,9 @@
   echo '</ul>';
   echo '</nav>';
   //  echo $category;
+
+error_log("エラーです")
+
 ?>
 
 <div class="sns">
