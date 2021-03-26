@@ -7,6 +7,10 @@
         @media (max-width: $query) {
           @content;
         }
+      } @else if $name == "min" {
+        @media (min-width: $query) {
+          @content;
+        }
       }
     }
   }
@@ -27,6 +31,7 @@
 @mixin hide-text {
   text-indent: -9999px;
   text-align: left;
+  display: inline-block;
 }
 
 @mixin bg-responsive($file, $base: width, $scale: 100%, $maps: false) {

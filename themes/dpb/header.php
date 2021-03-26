@@ -27,16 +27,16 @@
 */ ?>
 <?php // iconfont 読み込み?>
 <style>
-@font-face {
-  font-family: "svgfont";
-  src: url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.eot');
-  src: url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.eot?#iefix') format('eot'),
-    url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.woff') format('woff'),
-    url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.ttf') format('truetype'),
-    url('/wp-content/themes/corporate/fonts/svgfont/files/svgfont.svg#svgfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+  @font-face {
+    font-family: "svgfont";
+    src: url('/wp-content/themes/dpb/fonts/svgfont/files/svgfont.eot');
+    src: url('/wp-content/themes/dpb/fonts/svgfont/files/svgfont.eot?#iefix') format('eot'),
+      url('/wp-content/themes/dpb/fonts/svgfont/files/svgfont.woff') format('woff'),
+      url('/wp-content/themes/dpb/fonts/svgfont/files/svgfont.ttf') format('truetype'),
+      url('/wp-content/themes/dpb/fonts/svgfont/files/svgfont.svg#svgfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
 </style>
 <?php wp_head(); ?>
 <?php get_template_part('partials/analytics'); ?>
@@ -48,11 +48,4 @@
   <h1>Daily Practice Books</h1>
 </header>
 
-<nav class="global-navigation">
-  <ul>
-    <li><a href="/">TOP</a></li>
-    <li><a href="/about/">ABOUT</a></li>
-    <li><a href="/go-to-dpb/">GO TO DPB</a></li>
-    <li><a href="/contact/">CONTACT</a></li>
-  </ul>
-</nav>
+<?php get_template_part('navigation'); ?>

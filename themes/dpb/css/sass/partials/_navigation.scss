@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+#menu-icon {
+  z-index: 9999;
+}
+
+nav {
+//  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.1rem;
+//  padding: 5%;
+
+  @include mediaquery('max', $tablet) {
+    display: none;
+    height: 100vh;
+    padding: 40% 15%;
+  }
+
+  .sp-nav-wrap {
+
+    @include mediaquery('max', $tablet) {
+      @include clearfix;
+    }
+  }
+
+  h1 {
+
+  @include mediaquery('max', $tablet) {
+    float: right;
+  }
+
+    a {
+      font-family: "svgfont";
+
+      &:before {
+        content: "\EA01";
+        font-size: 4rem;
+      }
+
+      span {
+        @include hide-text;
+      }
+    }
+  }
+
+  .menu-wrap {
+    margin-bottom: 20%;
+
+    @include mediaquery('max', $tablet) {
+      float: left;
+      margin-top: 5%;
+      font-size: 1.6rem;
+    }
+
+    .menu {
+      margin-bottom: 10%;
+    }
+  }
+
+  .sns {
+    display: flex;
+    font-size: 1.3rem;
+
+    @include mediaquery('max', $tablet) {
+      margin-top: 5%;
+      font-size: 1.6rem;
+    }
+
+    li:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  .gallery-category {
+
+    @include mediaquery('max', $tablet) {
+      margin-top: 10%;
+    }
+
+    & li:before{
+      content: "#";
+      margin-right: 1%;
+    }
+  }
+}
+
+#menu-icon {
+  display: none;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+
+  &:before {
+    content: "\f0c9";
+  }
+
+  &.active:before {
+    content: "\f00d";
+  }
+
+  @include mediaquery('max', $tablet) {
+    display: block;
+  }
+}

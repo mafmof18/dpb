@@ -3,19 +3,13 @@
 header {
 
   h1 {
-    @extend %googlegont;
-    font-size: 7rem;
-    line-height: 1;
-    letter-spacing: 0.3rem;
-  }
-}
+    $img: 'logo-l.png';
+    @include bg-responsive($img, $scale: 100%);
+    @include hide-text;
 
-nav {
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 0.1rem;
-
-  &.gallery-category li:before{
-    content: "#";
-    margin-right: 1%;
+    @include mediaquery('max', $sp) {
+      $img: 'logo-s.png';
+      @include bg-responsive($img, $scale: 100%);
+    }
   }
 }

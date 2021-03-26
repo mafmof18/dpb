@@ -1,0 +1,116 @@
+main {
+  padding: 2%;
+
+  p {
+    margin-bottom: 5%;
+  }
+
+  @include mediaquery('max', $tablet) {
+//    padding: 0 3%;
+  }
+
+  a {
+    text-decoration: underline;
+    display: inline-block;
+  }
+
+  .arrow {
+    margin-top: 2%;
+
+    &::before {
+      font-family:"Font Awesome 5 Free";
+      content: "\f054";
+      font-weight: 900;
+      margin-right: 5px;
+      display: inline-block;
+    }
+  }
+
+  .address {
+    margin-bottom: 5%;
+
+    h1 {
+      font-weight: bold;
+      margin-bottom: 3%;
+    }
+
+    dd {
+
+      dl {
+        display: flex;
+
+        dd::before {
+          content: ":";
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+
+  .other {
+    dl {
+      display: flex;
+
+      dd::before {
+        content: ":";
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
+/*
+
+@include mediaquery('min', $tablet) {
+  section {
+    width: 50%;
+    padding: 0 2%;
+  }
+
+  section:nth-child(even) {
+    float: left;
+    padding-right: 1%;
+  }
+
+  section:nth-child(odd) {
+    float: right;
+    padding-left: 1%;
+  }
+}
+*/
+
+/*
+.layout {
+  display: flex;
+  line-height: 1.7;
+
+  .text {
+    width: 50%;
+  }
+
+  .image {
+    width: 50%;
+  }
+
+
+  li {
+    display: flex;
+
+    &::before {
+      @extend .arrow;
+    }
+  }
+
+  section {
+    margin-bottom: 10%;
+
+    h1 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5%;
+    }
+  }
+
+}
+*/

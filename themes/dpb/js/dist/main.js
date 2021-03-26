@@ -1,12 +1,12 @@
 // spグロナビ
 $("#menu-icon").on("click", function(){
-  $("#header nav").slideToggle();
+  $("nav").slideToggle();
   $(this).toggleClass("active");
   $("body").toggleClass("noscroll");
 
   // メニュー内のリンク押したらスライドが閉じる
-  $("#header nav a").on("click", function(){
-    $("#header nav").slideUp('fast');
+  $("nav a").on("click", function(){
+    $("nav").slideUp('fast');
     $("#menu-icon").removeClass("active");
     $("body").removeClass("noscroll");
     return false;
@@ -76,7 +76,6 @@ function init() {
       }, 100);
     }
   });
-
 }
 
 
@@ -140,9 +139,7 @@ function getPost(cat, nextLoad) {
         paged = 1 + parseInt(paged);
         $('#' + cat).attr('data-paged', paged);
       }
-      //alert('#' + data['cat']);
       $target.append(data['html']);
-      //console.log(data['last_page_num']);
       if (! nextLoad) {
         $target.fadeIn();
       }
@@ -169,3 +166,21 @@ $(window).on('load', function() {
   $('.the-comic').fancybox();
 });
 
+
+$(function() {
+  $('body').prepend('<div class="overlay"></div>');
+
+  $('a.img_popup').click(function() {
+    var left = ($(window).width() / 2) + $(window).scrollLeft() - ($(this).attr('width') / 2);
+    var top = ($(window).height() / 2) + $(window).scrollTop() - ($(this).attr('height') / 2);
+
+    $('div.overlay').css('height', $(document).height());
+    $('div.overlay').empty().append('<img src="' + $(this).attr('href') + '" />').css({display: 'block'});
+    $('div.overlay img').css({left: left, top: top, opacity: '1'});
+    return false;
+  });
+
+  $('div.overlay').click(function() {
+    $('div.overlay').hide();
+  });
+});

@@ -5,7 +5,7 @@ global $dir;
 function add_stylesheet(){
   global $dir;
   wp_register_style('style', $dir['theme'] . '/css/min/style.css');
-//  wp_register_style('fontawesome', '//use.fontawesome.com/releases/v5.9.0/css/all.css');
+  wp_register_style('fontawesome', '//use.fontawesome.com/releases/v5.9.0/css/all.css');
   wp_register_style('googlefont', '//fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
   wp_register_style('slick-theme', '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
   wp_register_style('fancybox', '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css');
@@ -15,7 +15,7 @@ function add_stylesheet(){
   wp_enqueue_style('fontawesome');
   wp_enqueue_style('slick');
   wp_enqueue_style('slick-theme');
-  wp_enqueue_style('fancybox');
+//  wp_enqueue_style('fancybox');
 }
 
 // javascripts 登録
@@ -32,7 +32,7 @@ function add_javascripts(){
 //  wp_enqueue_script('slick');
   wp_enqueue_script('fontawesome');
   wp_enqueue_script('webfont');
-  wp_enqueue_script('fancybox');
+//  wp_enqueue_script('fancybox');
   wp_enqueue_script('main');
 }
 

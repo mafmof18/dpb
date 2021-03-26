@@ -1,12 +1,12 @@
 // spグロナビ
 $("#menu-icon").on("click", function(){
-  $("#header nav").slideToggle();
+  $("nav").slideToggle();
   $(this).toggleClass("active");
   $("body").toggleClass("noscroll");
 
   // メニュー内のリンク押したらスライドが閉じる
-  $("#header nav a").on("click", function(){
-    $("#header nav").slideUp('fast');
+  $("nav a").on("click", function(){
+    $("nav").slideUp('fast');
     $("#menu-icon").removeClass("active");
     $("body").removeClass("noscroll");
     return false;
