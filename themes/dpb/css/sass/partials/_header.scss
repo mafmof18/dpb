@@ -4,8 +4,12 @@ header {
 
   h1 {
     $img: 'logo-l.png';
-    @include bg-responsive($img, $scale: 100%);
+    @include bg-responsive($img, $scale: 98%);
     @include hide-text;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z(header);
 
     @include mediaquery('max', $sp) {
       $img: 'logo-s.png';

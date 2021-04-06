@@ -19,26 +19,46 @@
   $categories = get_categories();
 ?>
 
-<main class="content">
-
+<main id="container" class="container">
   <div id="comic-area" class="comic-inner" data-category="<?php echo $category; ?>" data-path="<?php echo $wp_path; ?>" data-nonce="<?php echo $nonce; ?>" >
-     <div id="all" class="all comic-list" data-paged="1" data-loaded="false">
-     </div>
+     <ul id="all" class="all comic-list" data-paged="1" data-loaded="false">
+     </ul>
 
       <?php
         foreach( $categories as $category ) {
       ?>
-        <div id="<?php echo $category->slug ?>" class="<?php echo $category->slug ?> comic-list" data-paged="1" data-loaded="false">
+        <ul id="tiles <?php echo $category->slug ?>" class="<?php echo $category->slug ?> comic-list" data-paged="1" data-loaded="false">
           <?php //get_comic('all', 1, PAGE_COMIC_COUNT); ?>
-        </div>
+        </ul>
       <?php
       }
     ?>
   </div>
-  <a class="img_popup" width="大きな画像の横幅" height="大きな画像の高さ" href="/wp-content/uploads/2L-8.jpg"><img src="/wp-content/uploads/2L-8.jpg"></a>
 
   <div class="loader">Loading...</div>
-
 </main>
+
+<!-- サンプル
+<main id="container" class="container">
+  <ul id="tiles" class="comic-list">
+    <li><img src="/wp-content/uploads/womans_market.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/Akosan_no_koibito.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/womans_market.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/Akosan_no_koibito.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/MAGNUM_ANALOG_RECOVERY.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/womans_market.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/Akosan_no_koibito.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/womans_market.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/Akosan_no_koibito.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
+    <li><img src="/wp-content/uploads/MAGNUM_ANALOG_RECOVERY.png" width="200" /></li>
+  </ul>
+</main>
+-->
 
 <?php get_footer(); ?>

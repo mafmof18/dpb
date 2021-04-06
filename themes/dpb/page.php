@@ -1,13 +1,10 @@
 <?php get_header(); ?>
 
-<main class="content">
+<main class="content pages">
 
 <?php if(have_posts()): while(have_posts()):the_post(); ?>
 
-  <?php remove_filter('the_content', 'wpautop'); ?>
-  <!-- /wp:html -->
-  <?php the_content(); ?>
-  <!-- /wp:html -->
+  <p><?php the_content(); ?></p>
 
 <?php endwhile; endif; ?>
 

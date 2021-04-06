@@ -7,32 +7,23 @@ function add_stylesheet(){
   wp_register_style('style', $dir['theme'] . '/css/min/style.css');
   wp_register_style('fontawesome', '//use.fontawesome.com/releases/v5.9.0/css/all.css');
   wp_register_style('googlefont', '//fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
-  wp_register_style('slick-theme', '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
-  wp_register_style('fancybox', '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css');
   // 読み込み
   wp_enqueue_style('style');
   wp_enqueue_style('googlefont');
   wp_enqueue_style('fontawesome');
-  wp_enqueue_style('slick');
-  wp_enqueue_style('slick-theme');
-//  wp_enqueue_style('fancybox');
 }
 
 // javascripts 登録
 function add_javascripts(){
   global $dir;
-  wp_register_script('jquery', '//code.jquery.com/jquery-2.2.4.min.js');
+  wp_register_script('jquery', '//code.jquery.com/jquery-1.11.0.min.js');
   wp_register_script('fontawesome', '//kit.fontawesome.com/a6489741f4.js');
-  wp_register_script('webfont', '//webfonts.xserver.jp/js/xserver.js');
-//  wp_register_script('slick', '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js');
+  wp_register_script('wookmark', $dir['theme'] . '/js/src/wookmark.min.js');
   wp_register_script('main', $dir['theme'] . '/js/min/main.js');
-  wp_register_script('fancybox', '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js');
   // 読み込み
   wp_enqueue_script('jquery');
-//  wp_enqueue_script('slick');
   wp_enqueue_script('fontawesome');
-  wp_enqueue_script('webfont');
-//  wp_enqueue_script('fancybox');
+  wp_enqueue_script('wookmark');
   wp_enqueue_script('main');
 }
 

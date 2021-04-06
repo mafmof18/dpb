@@ -11,7 +11,7 @@ $site['description'] = get_bloginfo('description');
 $site['url'] = get_bloginfo('url');
 
 // １ページに表示する漫画の件数
-define('PAGE_COMIC_COUNT', 10);
+define('PAGE_COMIC_COUNT', 20);
 
 /*** Media Library Categoriesのカテゴリーを通常と分離 ***/
 add_filter('wpmediacategory_taxonomy' , function(){return 'category_media';} );

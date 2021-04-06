@@ -67,4 +67,6 @@ function disable_image_sizes( $new_sizes ) {
 add_filter( 'intermediate_image_sizes_advanced', 'disable_image_sizes' );
 add_filter( 'big_image_size_threshold', '__return_false' );
 
+// 余計なpタグを消す
+remove_filter('the_content', 'wpautop');
 ?>

@@ -7,7 +7,12 @@
 nav {
 //  font-family: 'Roboto', sans-serif;
   letter-spacing: 0.1rem;
-//  padding: 5%;
+  padding: 2%;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  z-index: z(nav);
+  width: 25%;
 
   @include mediaquery('max', $tablet) {
     display: none;
@@ -76,9 +81,11 @@ nav {
       margin-top: 10%;
     }
 
-    & li:before{
-      content: "#";
-      margin-right: 1%;
+    & li {
+      a:before {
+        content: "#";
+        margin-right: 1%;
+      }
     }
   }
 }

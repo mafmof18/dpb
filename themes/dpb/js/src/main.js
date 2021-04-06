@@ -9,11 +9,36 @@ $('.slider').slick({
 });
 */
 
+// ランダムサイズの画像配置
+$('.comic-list li').wookmark({
+  autoResize: true,
+  container: $('#container'),
+  offset: 10,
+  outerOffset: 10,
+  itemWidth: 210
+});
+
 let $categoryTab = $('.gallery-category');
 let $comic = $('#comic-area');
 let $cssLoader = $('.loader');
-// 初期処理
-init();
+let $body = $('body');
+
+// homeの処理
+if ($body.hasClass('home')) {
+  // 初期処理
+  init();
+
+  $categoryTab.find('li').on('click', function(e) {
+    e.preventDefault();
+    $('.gallery-category').find('li').removeClass('current');
+    $(this).addClass('current');
+    getPost($(this).data('category'), false);
+  });
+
+  $(window).on('load', function() {
+    //$('.the-comic').fancybox();
+  });
+}
 
 function init() {
   let cat = $comic.data('category');
@@ -50,7 +75,6 @@ function init() {
     }
   });
 }
-
 
 function getPost(cat, nextLoad) {
   let $container = $('#comic-area');
@@ -117,7 +141,7 @@ function getPost(cat, nextLoad) {
         $target.fadeIn();
       }
 
-      $('.the-comic').fancybox();
+      //$('.the-comic').fancybox();
     });
   })
   .fail(function(jqXHR, textStatus, errorThrown) { // eslint-disable-line
@@ -127,15 +151,3 @@ function getPost(cat, nextLoad) {
     });
   });
 }
-
-$categoryTab.find('li').on('click', function(e) {
-  e.preventDefault();
-  $('.gallery-category').find('li').removeClass('current');
-  $(this).addClass('current');
-  getPost($(this).data('category'), false);
-});
-
-$(window).on('load', function() {
-  $('.the-comic').fancybox();
-});
-

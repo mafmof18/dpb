@@ -35,3 +35,5 @@
       $last_page_num = $the_query->max_num_pages;
     }
   }
+
+?>

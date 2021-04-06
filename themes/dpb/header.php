@@ -43,7 +43,16 @@
 
 </head>
 
-<body>
+
+<?php
+  $body_class = '';
+
+  if (is_home()) {
+    $body_class = 'home';
+  }
+?>
+
+<body <?php body_class(); ?>>
 <header id="header">
   <h1>Daily Practice Books</h1>
 </header>
