@@ -1,22 +1,4 @@
-// slick
-/*
-$('.slider').slick({
-  autoplay: true,
-  autoplaySpeed: 4000,
-  fade: true,
-  speed: 2000,
-  arrows: false
-});
-*/
-
-// ランダムサイズの画像配置
-$('.comic-list li').wookmark({
-  autoResize: true,
-  container: $('#container'),
-  offset: 10,
-  outerOffset: 10,
-  itemWidth: 210
-});
+// （本）投稿の取得作成、ajax
 
 let $categoryTab = $('.gallery-category');
 let $comic = $('#comic-area');
@@ -141,7 +123,14 @@ function getPost(cat, nextLoad) {
         $target.fadeIn();
       }
 
-      //$('.the-comic').fancybox();
+      // ランダムサイズの画像配置
+      $('.comic-list li').wookmark({
+        autoResize: true,
+        container: $('#container'),
+        offset: 20,
+        outerOffset: 10,
+//        itemWidth: 210
+      });
     });
   })
   .fail(function(jqXHR, textStatus, errorThrown) { // eslint-disable-line

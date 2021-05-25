@@ -38,6 +38,7 @@
     font-style: normal;
   }
 </style>
+<link rel="shortcut icon" href="/wp-content/themes/dpb/images/favicon.ico">
 <?php wp_head(); ?>
 <?php get_template_part('partials/analytics'); ?>
 
@@ -54,7 +55,9 @@
 
 <body <?php body_class(); ?>>
 <header id="header">
-  <h1>Daily Practice Books</h1>
+  <a href="/">
+    <h1>Daily Practice Books</h1>
+  </a>
 </header>
 
 <?php get_template_part('navigation'); ?>

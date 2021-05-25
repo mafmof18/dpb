@@ -2,19 +2,26 @@
 
 // color
 $black: #000;
+$biscuit: #D5DAC3;
 
 // breakpoint
 $sp: 414px; // iphone6〜
 $middle: 600px;
 $tablet: 768px; // ipad
+$tablet-min: 767px; // ipad
 $content: 980px; // site width
 $sp-content: 90%; // site sp width
+
+// size
+$pc-nav-width: 270px;
+$pc-log-height: 16%;
 
 // z-index
 $z-map: (
   content,
   header,
   nav,
+  menu,
   footer,
   overlay
 );

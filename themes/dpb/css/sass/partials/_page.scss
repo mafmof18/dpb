@@ -1,25 +1,71 @@
 .pages {
   @include clearfix;
+  width: 64%;
+
+    @include mediaquery('max', $tablet) {
+    padding: 0 4%;
+    width: 100%;
+    }
+
 
   section,
   figure {
-    width: 48%;
+    margin-bottom: 2%;
+    width: 46%;
+
+    @include mediaquery('max', $tablet-min) {
+      width: 100%;
+      margin-bottom: 20%;
+    }
   }
 
-  section {
-    float: left;
-  }
-
-  figure {
+  .image {
+    font-family: "svgfont";
     float: right;
+
+    &:before {
+      content: "\EA01";
+      font-size: 5rem;
+      position: absolute;
+      top: 8%;
+      left: 50%;
+
+      @include mediaquery('max', $tablet-min) {
+        float: none;
+        font-size: 4rem;
+        top: -40px;
+        left: 70%;
+      }
+    }
+
+    @include mediaquery('max', $tablet-min) {
+      width: 100%;
+      position: relative;
+      margin-top: 0;
+      right: 0;
+    }
+
+    img {
+      margin-bottom: 100vh;
+
+      @include mediaquery('max', $tablet-min) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .area1,
+  .area2 {
+    float: left;
+
+    @include mediaquery('max', $tablet-min) {
+      float: none;
+      width: 100%;
+    }
   }
 
   p {
     margin-bottom: 5%;
-  }
-
-  @include mediaquery('max', $tablet) {
-//    padding: 0 3%;
   }
 
   a {

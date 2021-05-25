@@ -22,17 +22,17 @@
         <li><a href="/access_contact/">ACCESS <br>& CONTACT</a></li>
       </ul>
       <ul class="sns">
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/dailypracticebooks/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/D_P_Books/" target="_blank"><i class="fab fa-twitter"></i></a></li>
       </ul>
     </div>
   </div>
 
-    <?php
-      echo '<ul class="gallery-category">';
-      foreach( $categories as $obj ) {
-        echo '<li class="'.$obj->slug.'" data-category="'.$obj->slug.'"><a href="/?'.$obj->slug.'">'.$obj->name.'</a></li>';
-      }
-      echo '</ul>';
-    ?>
+  <?php
+    echo '<ul class="gallery-category">';
+    foreach( $categories as $obj ) {
+      echo '<li class="'.$obj->slug.'" data-category="'.$obj->slug.'"><a href="/?category='.$obj->slug.'">'.$obj->name.'</a></li>';
+    }
+    echo '</ul>';
+  ?>
 </nav>

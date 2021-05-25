@@ -1,11 +1,13 @@
 @charset "utf-8";
 
 .copylight {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   text-align: center;
   font-weight: bold;
   padding: 2% 0;
   z-index: z(footer);
+
+  @include mediaquery('max', $sp) {
+    font-size: 0.8rem
+  }
 }

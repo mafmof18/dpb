@@ -1,15 +1,29 @@
-@charset "utf-8";
-
 .container {
   z-index: z(content);
   position: relative;
-  left: 25%;
-  width: 75%;
-  padding-bottom: 5%;
-  margin-top: 20%;
+  left: 24%;
+  width: 76%;
+  margin-top: $pc-log-height;
+
+  @include mediaquery('max', $tablet) {
+    left: 0;
+    width: 100%;
+  }
+
+  @include mediaquery('max', $sp) {
+    margin-top: 40%;
+  }
 
   .comic-list {
     display: none;
+
+    li img {
+      filter: drop-shadow(8px 8px 3px rgba(0,0,0,0.6));
+
+      @include mediaquery('max', $sp) {
+        filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.6));
+      }
+    }
   }
 
   .gallery-category {
@@ -26,6 +40,10 @@
   .the-post {
     width: 200px;
 
+    @include mediaquery('max', $sp) {
+      width: 150px;
+    }
+
     a {
       display: block;
       text-align: center;
@@ -37,7 +55,7 @@
   }
 
   .loader {
-    margin: 20px 0;
+//    margin: 20px 0;
     display: none;
   }
 
@@ -54,32 +72,40 @@
     width: 1em;
     height: 4em;
   }
+
   .loader {
     color: #ffffff;
     text-indent: -9999em;
-    margin: 88px auto;
-    position: relative;
     font-size: 11px;
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-animation-delay: -0.16s;
     animation-delay: -0.16s;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
+
   .loader:before,
   .loader:after {
     position: absolute;
     top: 0;
     content: '';
   }
+
   .loader:before {
     left: -1.5em;
     -webkit-animation-delay: -0.32s;
     animation-delay: -0.32s;
   }
+
   .loader:after {
     left: 1.5em;
   }
+
   @-webkit-keyframes load1 {
     0%,
     80%,
@@ -92,6 +118,7 @@
       height: 5em;
     }
   }
+
   @keyframes load1 {
     0%,
     80%,

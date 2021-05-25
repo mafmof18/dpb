@@ -1,57 +1,119 @@
 .overlay {
-  z-index: z(overlay);
   display: none;
+  z-index: z(overlay);
+  overflow: hidden;
   width: 96%;
-  background-color: rgba(#D5DAC3, .9);
-  padding: 5%;
-  position: absolute;
+  background-color: rgba($biscuit, .9);
+  padding: 6%;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 
+    @include mediaquery('max', $sp) {
+      padding: 10%;
+      overflow: hidden;
+      width: 90%;
+    }
+
   .inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
+    @include mediaquery('max', $sp) {
+      display: block;
+      overflow-y: scroll;
+      height: 100%;
+    }
   }
 
   .image {
-    width: 48%;
+    width: 400px;
+    margin-right: 50px;
+
+    @include mediaquery('max', $sp) {
+      width: 70%;
+      margin: 0 auto 10%;
+    }
 
     img {
       width: 100%;
+      filter: drop-shadow(8px 8px 3px rgba(0,0,0,0.6));
+
+      @include mediaquery('max', $sp) {
+        filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.6));
+      }
     }
   }
 
   .details {
-    width: 48%;
+    width: 450px;
+
+    @include mediaquery('max', $sp) {
+      width: 100%;
+    }
 
     .title {
       font-weight: bold;
+      font-size: 1.6rem;
       margin-bottom: 5%;
     }
 
     .meta {
       margin-bottom: 5%;
+      font-size: 1.2rem;
     }
 
     .caption {
       overflow-y: scroll;
+      max-height: 500px;
+      margin-bottom: 5%;
+
+      @include mediaquery('max', $sp) {
+        overflow-y: visible;
+        margin-bottom: 7%;
+        max-height: none;
+      }
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 5%;
+      font-size: 1.2rem;
+
+      li {
+        margin-right: 20px;
+        white-space: nowrap;
+
+        &:before {
+          content: "#";
+          margin-right: 5px;
+        }
+      }
     }
 
     .close {
       cursor: pointer;
       display: inline-block;
       vertical-align: middle;
+      position: absolute;
+      top: 2%;
+      right: 2%;
+
+      @include mediaquery('max', $tablet) {
+        top: 2%;
+        right: 4%;
+      }
 
       span {
-        font-family: "Font Awesome 5 Free";
-        font-weight: bold;
+        font-family: "svgfont";
 
         &:before {
-          content: "\f00d";
-          font-size: 1.5rem;
+          content: "\EA03";
+          font-size: 1.8rem;
           margin-right: 10%;
         }
       }

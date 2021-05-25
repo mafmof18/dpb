@@ -27,7 +27,7 @@
       <?php
         foreach( $categories as $category ) {
       ?>
-        <ul id="tiles <?php echo $category->slug ?>" class="<?php echo $category->slug ?> comic-list" data-paged="1" data-loaded="false">
+        <ul id="<?php echo $category->slug ?>" class="<?php echo $category->slug ?> comic-list" data-paged="1" data-loaded="false">
           <?php //get_comic('all', 1, PAGE_COMIC_COUNT); ?>
         </ul>
       <?php
@@ -37,28 +37,5 @@
 
   <div class="loader">Loading...</div>
 </main>
-
-<!-- サンプル
-<main id="container" class="container">
-  <ul id="tiles" class="comic-list">
-    <li><img src="/wp-content/uploads/womans_market.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/Akosan_no_koibito.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/womans_market.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/Akosan_no_koibito.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/MAGNUM_ANALOG_RECOVERY.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/womans_market.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/Akosan_no_koibito.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/womans_market.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/Akosan_no_koibito.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/india_e.png" width="200" /></li>
-    <li><img src="/wp-content/uploads/MAGNUM_ANALOG_RECOVERY.png" width="200" /></li>
-  </ul>
-</main>
--->
 
 <?php get_footer(); ?>

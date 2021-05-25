@@ -1,23 +1,33 @@
 @charset "utf-8";
 
 #menu-icon {
-  z-index: 9999;
+  z-index: z(menu);
 }
 
 nav {
-//  font-family: 'Roboto', sans-serif;
   letter-spacing: 0.1rem;
-  padding: 2%;
   position: fixed;
-  top: 20%;
-  left: 0;
+  top: 0;
+  left: 2%;
   z-index: z(nav);
-  width: 25%;
+  width: 15%;
+  margin-top: $pc-log-height;
+  letter-spacing: 0.05rem;
 
   @include mediaquery('max', $tablet) {
     display: none;
+    z-index: z(nav);
+    top: 0;
+    left: 0;
     height: 100vh;
+    width: 100%;
     padding: 40% 15%;
+    background-color: rgba($biscuit, .9);
+    margin-top: 0;
+  }
+
+  .menu {
+    font-family: 'Raleway', sans-serif;
   }
 
   .sp-nav-wrap {
@@ -38,7 +48,7 @@ nav {
 
       &:before {
         content: "\EA01";
-        font-size: 4rem;
+        font-size: 5rem;
       }
 
       span {
@@ -48,16 +58,12 @@ nav {
   }
 
   .menu-wrap {
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 
     @include mediaquery('max', $tablet) {
       float: left;
       margin-top: 5%;
       font-size: 1.6rem;
-    }
-
-    .menu {
-      margin-bottom: 10%;
     }
   }
 
@@ -67,7 +73,7 @@ nav {
 
     @include mediaquery('max', $tablet) {
       margin-top: 5%;
-      font-size: 1.6rem;
+      font-size: 2rem;
     }
 
     li:first-child {
@@ -76,9 +82,12 @@ nav {
   }
 
   .gallery-category {
+    font-weight: bold;
 
     @include mediaquery('max', $tablet) {
       margin-top: 10%;
+      font-size: 1.3rem;
+      line-height: 2rem;
     }
 
     & li {
@@ -92,19 +101,18 @@ nav {
 
 #menu-icon {
   display: none;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 1.5rem;
   position: fixed;
   bottom: 5%;
   right: 5%;
+  font-family: "svgfont";
 
   &:before {
-    content: "\f0c9";
+    content: "\EA02";
+    font-size: 1rem;
   }
 
   &.active:before {
-    content: "\f00d";
+    content: "\EA03";
   }
 
   @include mediaquery('max', $tablet) {
