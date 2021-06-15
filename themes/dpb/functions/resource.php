@@ -16,7 +16,7 @@ function add_stylesheet(){
 // javascripts 登録
 function add_javascripts(){
   global $dir;
-  wp_register_script('jquery', '//code.jquery.com/jquery-1.11.0.min.js');
+  wp_register_script('jquery', '//code.jquery.com/jquery-3.6.0.min.js');
   wp_register_script('wookmark', $dir['theme'] . '/js/libs/wookmark.min.js');
   wp_register_script('main', $dir['theme'] . '/js/min/main.js');
   // 読み込み

@@ -16,10 +16,6 @@ if ($body.hasClass('home')) {
     $(this).addClass('current');
     getPost($(this).data('category'), false);
   });
-
-  $(window).on('load', function() {
-    //$('.the-comic').fancybox();
-  });
 }
 
 function init() {
@@ -79,9 +75,9 @@ function getPost(cat, nextLoad) {
   if (! nextLoad) {
     $container.find('.comic-list').hide();
   }
-
   // 読み込み済みなら通信しない
-  if ($target.find('article').length > 0 && ! nextLoad) {
+  if ($target.find('li').length > 0 && ! nextLoad) {
+
     $cssLoader.fadeOut(function() {
       $categoryTab.find('li').removeClass('disable');
       if (! nextLoad) {
@@ -124,7 +120,7 @@ function getPost(cat, nextLoad) {
       }
 
       // ランダムサイズの画像配置
-      $('.comic-list li').wookmark({
+      $target.find('li').wookmark({
         autoResize: true,
         container: $('#container'),
         offset: 20,
@@ -140,30 +136,36 @@ function getPost(cat, nextLoad) {
     });
   });
 }
-
 // spグロナビ開閉
 
 var state = false;
 var scrollpos;
 $('#menu-icon').on('click', function(){
+//console.log(state);
   $('nav').slideToggle();
   if(state == false) {
     scrollpos = $(window).scrollTop();
+    $(this).addClass('active');
     $('body').addClass('fixed').css({'top': -scrollpos});
     state = true;
   } else {
+    $(this).removeClass('active');
     $('body').removeClass('fixed').css({'top': 0});
     $(window).scrollTop( scrollpos );
     state = false;
   }
 });
 
-// メニュー内のリンク押したらスライドが閉じる
-//$(".gallery-category a").on("click", function(){
-//  $("nav").slideUp('fast');
-//    $('body').removeClass('fixed').css({'top': 0});
-//    state = false;
-//});
+// spメニュー内のリンク押したらスライドが閉じる
+  $(".gallery-category a").on("click", function(){
+    if(state == true) {
+      $('nav').slideUp('fast');
+      $('#menu-icon').removeClass('active');
+      $('body').removeClass('fixed');
+      state = false;
+    }
+  });
+
 // 本クリック時の処理
 
 $(function() {

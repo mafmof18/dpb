@@ -16,10 +16,6 @@ if ($body.hasClass('home')) {
     $(this).addClass('current');
     getPost($(this).data('category'), false);
   });
-
-  $(window).on('load', function() {
-    //$('.the-comic').fancybox();
-  });
 }
 
 function init() {
@@ -79,9 +75,9 @@ function getPost(cat, nextLoad) {
   if (! nextLoad) {
     $container.find('.comic-list').hide();
   }
-
   // 読み込み済みなら通信しない
-  if ($target.find('article').length > 0 && ! nextLoad) {
+  if ($target.find('li').length > 0 && ! nextLoad) {
+
     $cssLoader.fadeOut(function() {
       $categoryTab.find('li').removeClass('disable');
       if (! nextLoad) {
@@ -124,7 +120,7 @@ function getPost(cat, nextLoad) {
       }
 
       // ランダムサイズの画像配置
-      $('.comic-list li').wookmark({
+      $target.find('li').wookmark({
         autoResize: true,
         container: $('#container'),
         offset: 20,

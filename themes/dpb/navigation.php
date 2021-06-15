@@ -30,6 +30,7 @@
 
   <?php
     echo '<ul class="gallery-category">';
+    echo '<li class="all" data-category="all"><a href="/">ALL</a></li>';
     foreach( $categories as $obj ) {
       echo '<li class="'.$obj->slug.'" data-category="'.$obj->slug.'"><a href="/?category='.$obj->slug.'">'.$obj->name.'</a></li>';
     }
